@@ -1,0 +1,132 @@
+{
+    "basic_stats": {
+        "ad": "20 ad",
+        "as": "15 as",
+        "ap": "20 ap",
+        "mn": "20 mn",
+        "ar": "20 ar",
+        "mr": "20 mr",
+        "hp": "200 hp",
+        "wi": "0"
+    },
+    "combination_stats": {
+        "ad": {
+            "ad": "20 ad, 20 ad",
+            "as": "20 ad, 15 as",
+            "ap": "20 ad, 20 ap",
+            "mn": "20 ad, 20 mn",
+            "ar": "20 ad, 20 ar",
+            "mr": "20 ad, 20 mr",
+            "hp": "20 ad, 200 hp",
+            "wi": "20 ad, 0"
+        },
+        "as": {
+            "ad": "15 as, 20 ad",
+            "as": "15 as, 15 as",
+            "ap": "15 as, 20 ap",
+            "mn": "15 as, 20 mn",
+            "ar": "15 as, 20 ar",
+            "mr": "15 as, 20 mr",
+            "hp": "15 as, 200 hp",
+            "wi": "15 as, 0"
+        },
+        "ap": {
+            "ad": "20 ap, 20 ad",
+            "as": "20 ap, 15 as",
+            "ap": "20 ap, 20 ap",
+            "mn": "20 ap, 20 mn",
+            "ar": "20 ap, 20 ar",
+            "mr": "20 ap, 20 mr",
+            "hp": "20 ap, 200 hp",
+            "wi": "20 ap, 0"
+        },
+        "mn": {
+            "ad": "20 mn, 20 ad",
+            "as": "20 mn, 15 as",
+            "ap": "20 mn, 20 ap",
+            "mn": "20 mn, 20 mn",
+            "ar": "20 mn, 20 ar",
+            "mr": "20 mn, 20 mr",
+            "hp": "20 mn, 200 hp",
+            "wi": "20 mn, 0"
+        },
+        "ar": {
+            "ad": "20 ar, 20 ad",
+            "as": "20 ar, 15 as",
+            "ap": "20 ar, 20 ap",
+            "mn": "20 ar, 20 mn",
+            "ar": "20 ar, 20 ar",
+            "mr": "20 ar, 20 mr",
+            "hp": "20 ar, 200 hp",
+            "wi": "20 ar, 0"
+        },
+        "mr": {
+            "ad": "20 mr, 20 ad",
+            "as": "20 mr, 15 as",
+            "ap": "20 mr, 20 ap",
+            "mn": "20 mr, 20 mn",
+            "ar": "20 mr, 20 ar",
+            "mr": "20 mr, 20 mr",
+            "hp": "20 mr, 200 hp",
+            "wi": "20 mr, 0"
+        },
+        "hp": {
+            "ad": "200 hp, 20 ad",
+            "as": "200 hp, 15 as",
+            "ap": "200 hp, 20 ap",
+            "mn": "200 hp, 20 mn",
+            "ar": "200 hp, 20 ar",
+            "mr": "200 hp, 20 mr",
+            "hp": "200 hp, 200 hp",
+            "wi": "200 hp, 0"
+        },
+        "wi": {
+            "ad": "0, 20 ad",
+            "as": "0, 15 as",
+            "ap": "0, 20 ap",
+            "mn": "0, 20 mn",
+            "ar": "0, 20 ar",
+            "mr": "0, 20 mr",
+            "hp": "0, 200 hp",
+            "wi": "0, 0"
+        }
+    },
+    "combination_specials": {
+        "ad ad": "100 crit dmg",
+        "ad as": "5%% chance each second to crit",
+        "ad ap": "heal for 25%% of dmg dealt",
+        "ad mn": "after ulting, gain 15% mana per atk",
+        "ad ar": "revive with 500hp",
+        "ad mr": "50%% lifesteal",
+        "ad hp": "adjacent allies on battle start gain 10% as",
+        "ad wi": "become an assassin",
+        "as as": "5%% chance each second to crit",
+        "as ap": "double range, no miss",
+        "as mn": "3%% atack speed on hit",
+        "as ar": "100 splash on every 3rd atk",
+        "as mr": "dodge all crits",
+        "as hp": "removes one star",
+        "as wi": "aa scales with hp, splash dmg",
+        "ap ap": "become blademaster",
+        "ap mn": "heal for 25%% of dmg dealt",
+        "ap ar": "3%% atack speed on hit",
+        "ap mr": "50%% more ap",
+        "ap hp": "200 splash on spell hit",
+        "ap wi": "shield near allies for 200hp",
+        "mn mn": "200 dmg on spell cast by enemies",
+        "mn ar": "spell dmg negates healing",
+        "mn mr": "become sorcerer",
+        "mn hp": "after ulting, gain 15% mana per atk",
+        "mn wi": "100 splash on every 3rd atk",
+        "ar ar": "200 splash on spell hit",
+        "ar mr": "gain 40 bonus mana after spell casts",
+        "ar hp": "adjacent enemies attack 20%% slower",
+        "ar wi": "high chance of silencing on hit",
+        "mr mr": "on death, heal nearby allies for 1000hp",
+        "mr hp": "become a demon",
+        "mr wi": "revive with 500hp",
+        "hp hp": "dodge all crits",
+        "hp wi": "shield near allies for 200hp",
+        "wi wi": "adjacent enemies attack 20%% slower"
+    }
+}
