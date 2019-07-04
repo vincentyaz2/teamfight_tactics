@@ -21,6 +21,9 @@ basic_stats = {
 	'wi': '0' # wildcard
 }
 
+# refers to the basic_stats dict so we won't have to refactor
+# code has been generated using the utility methods at the end of the file
+# will need to be moved out to a utility module
 combination_stats = {
 	
 	'ad': {
@@ -107,6 +110,8 @@ combination_stats = {
 	}
 }
 
+# keys were generated, descriptions were copied from https://i.imgur.com/FdMYSa9.jpg
+# once the game goes out of beta, we can expect the Riot API to help us get this programmatically
 combination_specials = {
 	'ad ad':'100 crit dmg',
 	'ad as':'5%% chance each second to crit',
@@ -144,14 +149,12 @@ combination_specials = {
 	'hp hp':'dodge all crits',
 	'hp wi':'shield near allies for 200hp',
 	'wi wi':'adjacent enemies attack 20%% slower'
-
 }
-
 
 
 data = {'basic_stats': basic_stats, 'combination_stats': combination_stats, 'combination_specials':combination_specials}
 
-with open('data.txt', 'w+') as outfile:
+with open('data.json', 'w+') as outfile:
 	json.dump(data, outfile, indent=4)
 
 
@@ -235,6 +238,7 @@ def generate_combination_code(stat):
 		print(t)
 
 # generates code for values of the combination_specials js object
+# written using the regex code generators
 def generate_specials_description():
 
 	li2 = []
@@ -325,6 +329,7 @@ def generate_specials_description():
 	return description
 
 # generates code for keys of the combination_specials js object
+# in retrospect, better have redundancy than parsing/building a more complicated structure
 def generate_specials_keys():
 	li = ['ad', 'as', 'ap', 'mn', 'ar', 'mr', 'hp', 'wi']
 	hashmap = {}
