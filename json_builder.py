@@ -114,41 +114,41 @@ combination_stats = {
 # once the game goes out of beta, we can expect the Riot API to help us get this programmatically
 combination_specials = {
 	'ad ad':'100 crit dmg',
-	'ad as':'5%% chance each second to crit',
-	'ad ap':'heal for 25%% of dmg dealt',
+	'ad as':'5% chance each second to crit',
+	'ad ap':'heal for 25% of dmg dealt',
 	'ad mn':'after ulting, gain 15% mana per atk',
 	'ad ar':'revive with 500hp',
-	'ad mr':'50%% lifesteal',
+	'ad mr':'50% lifesteal',
 	'ad hp':'adjacent allies on battle start gain 10% as',
 	'ad wi':'become an assassin',
-	'as as':'5%% chance each second to crit',
-	'as ap':'double range, no miss',
-	'as mn':'3%% atack speed on hit',
-	'as ar':'100 splash on every 3rd atk',
-	'as mr':'dodge all crits',
-	'as hp':'removes one star',
-	'as wi':'aa scales with hp, splash dmg',
-	'ap ap':'become blademaster',
-	'ap mn':'heal for 25%% of dmg dealt',
-	'ap ar':'3%% atack speed on hit',
-	'ap mr':'50%% more ap',
-	'ap hp':'200 splash on spell hit',
-	'ap wi':'shield near allies for 200hp',
-	'mn mn':'200 dmg on spell cast by enemies',
-	'mn ar':'spell dmg negates healing',
-	'mn mr':'become sorcerer',
-	'mn hp':'after ulting, gain 15% mana per atk',
-	'mn wi':'100 splash on every 3rd atk',
-	'ar ar':'200 splash on spell hit',
-	'ar mr':'gain 40 bonus mana after spell casts',
-	'ar hp':'adjacent enemies attack 20%% slower',
-	'ar wi':'high chance of silencing on hit',
-	'mr mr':'on death, heal nearby allies for 1000hp',
-	'mr hp':'become a demon',
-	'mr wi':'revive with 500hp',
-	'hp hp':'dodge all crits',
-	'hp wi':'shield near allies for 200hp',
-	'wi wi':'adjacent enemies attack 20%% slower'
+	'as as':'double range, no miss',
+	'as ap':'3% atack speed on hit',
+	'as mn':'100 splash on every 3rd atk',
+	'as ar':'dodge all crits',
+	'as mr':'removes one star',
+	'as hp':'aa scales with hp, splash dmg',
+	'as wi':'become blademaster',
+	'ap ap':'50% more ap',
+	'ap mn':'200 splash on spell hit',
+	'ap ar':'shield near allies for 200hp',
+	'ap mr':'200 dmg on spell cast by enemies',
+	'ap hp':'spell dmg negates healing',
+	'ap wi':'become sorcerer',
+	'mn mn':'gain 40 bonus mana after spell casts',
+	'mn ar':'adjacent enemies attack 20% slower',
+	'mn mr':'high chance of silencing on hit',
+	'mn hp':'on death, heal nearby allies for 1000hp',
+	'mn wi':'become a demon',
+	'ar ar':'reflect 35% of atk dmg dealt',
+	'ar mr':'chance to disarm on hit',
+	'ar hp':'burn 15% of max hp on hit',
+	'ar wi':'become a knight',
+	'mr mr':'83% magic resistance',
+	'mr hp':'on combat start, banish 1 enemy for 5s',
+	'mr wi':'attack 2 extra targets for 50% reduced dmg',
+	'hp hp':'regenerate 3% hp per second',
+	'hp wi':'become a glacial',
+	'wi wi':'get an extra unit on the board'
 }
 
 
@@ -245,24 +245,28 @@ def generate_specials_description():
 
 	description = []
 
+	# bug here
+	# we don't want to generate all 64 combinations
+	# if we go through the combination once, then 
 	for item in item_types:
 		for another in item_types:
 			t = "'{} {}':".format(item, another)
 			li2.append(t)
 
+
 	for item in li2:
 		if re.match(r'(.ad.ad.)', item):
 			description.append(r'100 crit dmg')
 		elif re.match(r'(.ad.as.|.as.ad.)', item):
-			description.append(r'5%% chance each second to crit')
+			description.append(r'5% chance each second to crit')
 		elif re.match(r'(.ad.ap.|.ap.ad.)', item):
-			description.append(r'heal for 25%% of dmg dealt')
+			description.append(r'heal for 25% of dmg dealt')
 		elif re.match(r'(.ad.mn.|.mn.ad.)', item):
 			description.append(r'after ulting, gain 15% mana per atk')
 		elif re.match(r'(.ad.ar.|.ar.ad.)', item):
 			description.append(r'revive with 500hp')
 		elif re.match(r'(.ad.mr.|.mr.ad.)', item):
-			description.append(r'50%% lifesteal')
+			description.append(r'50% lifesteal')
 		elif re.match(r'(.ad.hp.|.hp.ad.)', item):
 			description.append(r'adjacent allies on battle start gain 10% as')
 		elif re.match(r'(.ad.wi.|.wi.ad.)', item):
@@ -270,7 +274,7 @@ def generate_specials_description():
 		elif re.match(r'(.as.as.)', item):
 			description.append(r'double range, no miss')
 		elif re.match(r'(.as.ap.|.ap.as.)', item):
-			description.append(r'3%% atack speed on hit')
+			description.append(r'3% atack speed on hit')
 		elif re.match(r'(.as.mn.|.mn.as.)', item):
 			description.append(r'100 splash on every 3rd atk')
 		elif re.match(r'(.as.ar.|.ar.as.)', item):
@@ -282,7 +286,7 @@ def generate_specials_description():
 		elif re.match(r'(.as.wi.|.wi.as.)', item):
 			description.append(r'become blademaster')
 		elif re.match(r'(.ap.ap.)', item):
-			description.append(r'50%% more ap')
+			description.append(r'50% more ap')
 		elif re.match(r'(.ap.mn.|.mn.ap.)', item):
 			description.append(r'200 splash on spell hit')
 		elif re.match(r'(.ap.ar.|.ar.ap.)', item):
@@ -296,7 +300,7 @@ def generate_specials_description():
 		elif re.match(r'(.mn.mn.)', item):
 			description.append(r'gain 40 bonus mana after spell casts')
 		elif re.match(r'(.mn.ar.|.ar.mn.)', item):
-			description.append(r'adjacent enemies attack 20%% slower')
+			description.append(r'adjacent enemies attack 20% slower')
 		elif re.match(r'(.mn.mr.|.mr.mn.)', item):
 			description.append(r'high chance of silencing on hit')
 		elif re.match(r'(.mn.hp.|.hp.mn.)', item):
@@ -304,21 +308,21 @@ def generate_specials_description():
 		elif re.match(r'(.mn.wi.|.wi.mn.)', item):
 			description.append(r'become a demon')
 		elif re.match(r'(.ar.ar.)', item):
-			description.append(r'reflect 35%% of atk dmg dealt')
+			description.append(r'reflect 35% of atk dmg dealt')
 		elif re.match(r'(.ar.mr.|.mr.ar.)', item):
 			description.append(r'chance to disarm on hit')
 		elif re.match(r'(.ar.hp.|.hp.ar.)', item):
-			description.append(r'burn 15%% of max hp on hit')
+			description.append(r'burn 15% of max hp on hit')
 		elif re.match(r'(.ar.wi.|.wi.ar.)', item):
 			description.append(r'become a knight')
 		elif re.match(r'(.mr.mr.)', item):
-			description.append(r'83%% magic resistance')
+			description.append(r'83% magic resistance')
 		elif re.match(r'(.mr.hp.|.hp.mr.)', item):
 			description.append(r'on combat start, banish 1 enemy for 5s')
 		elif re.match(r'(.mr.wi.|.wi.mr.)', item):
 			description.append(r'attack 2 extra targets for 50% reduced dmg')
 		elif re.match(r'(.hp.hp.)', item):
-			description.append(r'regenerate 3%% hp per second')
+			description.append(r'regenerate 3% hp per second')
 		elif re.match(r'(.hp.wi.|.wi.hp.)', item):
 			description.append(r'become a glacial')
 		elif re.match(r'(.wi.wi.)', item):
@@ -326,7 +330,7 @@ def generate_specials_description():
 		else:
 			raise Exception('There is an error in item_types dict.')
 
-	return description
+	return list(dict.fromkeys(description)) # removes duplicates, another approach vs what was used in regex_builder_all_components()
 
 # generates code for keys of the combination_specials js object
 # in retrospect, better have redundancy than parsing/building a more complicated structure
@@ -374,6 +378,8 @@ def print_dict(d):
 
 		s = ''.join(tu)
 		print(s)
+
+
 
 
 

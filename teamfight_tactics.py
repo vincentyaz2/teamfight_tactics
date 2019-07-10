@@ -24,6 +24,7 @@ wi for wildcard
 
 from pprint import pprint
 from typing import List, Tuple, Type
+from functools import partial
 import json
 
 with open('data.json') as f:
@@ -118,12 +119,16 @@ class Combined:
 
 # GUI functions
 
+
+
+
 def build_item(basic_item1, basic_item2):
     return basic_item1.combine_fromname(basic_item2)
 
-print(build_item(Basic('ad'), 'ap').description()) 
 
-# working, more tests in test_teamfight_tactics.py
+# print(build_item(Basic('ad'), 'ap').description()) 
+
+
 
 
 
