@@ -195,7 +195,7 @@ def regex_builder_all_components():
 			# if our combined item hasn't been added to the hashmap yet
 			# it means that we haven't went through that combination yet
 			# so let's generate the regex for that combination
-			# and add it to our hashmap so we don't generate another one for the same item
+			# and add it to our hashmap so we don't generate another one for the same iteSm
 			if all(key not in hashmap for key in (built_key_v1, built_key_v2)):
 
 				# if our components are the same

@@ -1,10 +1,5 @@
 '''
-Script to help Teamfight Tactics players build 
-
-TODO: 
-- move the utility methods to a utility module
-- build GUI
-- move GUI code in a separate file
+Utility tool to help Teamfight Tactics players with item building
 
 '''
 
@@ -116,17 +111,6 @@ class Combined:
     def description(self):
         return '{} gives {} and {}.'.format(self.name, self.stat, self.special)
 
-
-# GUI functions
-
-
-
-
-def build_item(basic_item1, basic_item2):
-    return basic_item1.combine_fromname(basic_item2)
-
-
-# print(build_item(Basic('ad'), 'ap').description()) 
 
 
 
